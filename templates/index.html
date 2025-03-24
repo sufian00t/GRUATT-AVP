@@ -16,8 +16,9 @@
             <div class="mb-3">
                 <textarea class="form-control" id="sequence" name="sequence" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-custom">Submit</button>
-            <button type="reset" class="btn btn-danger btn-custom">Clear</button>
+            <button type="submit" class="btn btn-submit">Submit</button>
+            <button type="reset" class="btn btn-clear">Clear</button>
+            <button type="button" class="btn btn-insert-example" id="insertExample">Insert Example</button>
         </form>
     </div>
 
@@ -66,11 +67,50 @@
             height: 150px;
             resize: none;
         }
-        .btn-custom {
+
+        /* Modern Button Styling */
+        .btn {
             margin: 10px;
-            padding: 10px 20px;
+            padding: 12px 20px;
             font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
         }
+
+        /* Submit Button - Green */
+        .btn-submit {
+            background: linear-gradient(45deg, #28a745, #218838);
+            color: white;
+        }
+        .btn-submit:hover {
+            background: linear-gradient(45deg, #218838, #1e7e34);
+            transform: scale(1.05);
+        }
+
+        /* Clear Button - Red */
+        .btn-clear {
+            background: linear-gradient(45deg, #dc3545, #bd2130);
+            color: white;
+        }
+        .btn-clear:hover {
+            background: linear-gradient(45deg, #bd2130, #9c1c24);
+            transform: scale(1.05);
+        }
+
+        /* Insert Example Button - Blue */
+        .btn-insert-example {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+        }
+        .btn-insert-example:hover {
+            background: linear-gradient(45deg, #0056b3, #004494);
+            transform: scale(1.05);
+        }
+
         .footer {
             background-color: #343a40;
             color: white;
@@ -81,4 +121,48 @@
             text-align: center;
         }
     </style>
+
+    <script>
+        document.getElementById("insertExample").addEventListener("click", function() {
+            document.getElementById("sequence").value = `>Positive1
+FHNHGKQ
+>Positive2
+RCICTRGFCRCICTRGFC
+>Positive3
+FFRHLFRGAKAIFRGARQGWRAHKVVSRYRNRDVPETDNNQEEP
+>Positive4
+CESCVWIPCISSVVGCSCKSKVCYKNGTLP
+>Positive5
+EAIIRILQELLFKHFRIGRRRRRRRR
+>Negative1
+NCCRRTSVMLEICILLTLLETIWPWIAKRAVTNRSSCSRR
+>Negative2
+YQCLRCGGIFNKRREVVEHLLVGHKHKDRLTLDFYYIYFRVRGQ
+>Negative3
+VDLWPVSTRPRVLFRAAPSLLNSASAASMLWAELIAMAPSIPSALPPFS
+>Negative4
+MLKLHGFSVSNYYNMVKLALLEKG
+>Negative5
+EKKEEQYINQAEYVPHPTKEGEYALFLHETYHLLSEDDETQTTE
+>Positive6
+NIFSLLSLGAKVLGKTLLKSAGKAGAEQLACKATNQC
+>Positive7
+CDATSAQVC
+>Positive8
+CLFNHPKYC
+>Positive9
+FLFAFRIFKRVFKKFRKLFKRAF
+>Negative6
+EAFTYTLLMTLGVVTLFFAVAFRDPPKFDK
+>Negative7
+DGDDGDGD
+>Negative8
+DIDFRVAIVLAPIAVAAGWAAFNIGAAAIRQVQNFLNREA
+>Negative9
+IARLREDGIQKRVIQEGRGELPDFQDG
+>Negative10
+LQVRASPTWGGGTYKKAVLVSLCRYSTAVGAPH`;
+        });
+    </script>
+
 {% endblock %}
